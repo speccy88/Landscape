@@ -1,0 +1,46 @@
+.header {
+    text-align: center;
+}
+
+body {
+    height: auto;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    border: 3px solid;
+}
+
+#form1 {
+    width: 150px;
+}
+
+#form2 {
+    width: 425px;
+}
+
+.day {
+    //font-weight: bold;
+}
+
+.content {
+    margin-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.grid
+{
+    width: 100px;
+    height: 100px;
+    padding: 0px; 
+    margin: 0px;
+}
+
+.list
+{
+    height: auto;
+    width: 200px;
+    padding: 0px; 
+    margin: 0px;
+}

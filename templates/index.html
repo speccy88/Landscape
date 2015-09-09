@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block body %}
+<body>
+    <div class="header">
+        <h1>Contrôle de l'éclairage</h1>
+        <p>Design Frédérick Blais</p>
+    </div>
+
+    <div class="content">
+    
+    <form id="form1">
+        <fieldset>
+        <legend>&nbspChoisir le mode&nbsp</legend>
+        <label>
+            <input type="radio" ng-model="mode" value="ON">
+            ON
+        </label><br/>
+        <label>
+            <input type="radio" ng-model="mode" value="OFF">
+            OFF
+        </label><br/>
+        <label>
+            <input type="radio" ng-model="mode" value="SCHEDULE">
+            HORAIRE
+        </label><br/>
+        <label>
+            <input type="radio" ng-model="mode" value="SENSOR">
+            CAPTEUR
+        </label><br/>
+        </fieldset>
+    </form>
+    <br>
+    
+    <form id="form2">
+    <fieldset>
+        <legend>&nbspHoraire d'éclairage&nbsp</legend>
+           <table>
+           <col width="100">
+           <col width="150">
+           <col width="150">
+           <tr>
+           <th align="left">JOUR</th>
+           <th>DÉPART</th>
+           <th>ARRÊT</th>
+           </tr>
+                {% for i in range(7) %}
+                <tr>
+                    <td><span class="day" ng-bind="week[{{i}}].day"></td>
+                    <td align="center">
+                    <select ng-model="week[{{i}}].startHour">
+                        {% for j in range(24) %}
+                        <option value="{{j}}">{{j}}</option>
+                        {% endfor %}
+                    </select>
+                    <select ng-model="week[{{i}}].startMinute">
+                        {% for j in range(0,60,5) %}
+                        <option value="{{j}}">{{j}}</option>
+                        {% endfor %}
+                    </select>
+                    </td>
+
+                    <td align="center">
+                    <select ng-model="week[{{i}}].stopHour">
+                        {% for j in range(24) %}
+                        <option value="{{j}}">{{j}}</option>
+                        {% endfor %}
+                    </select>
+                    <select ng-model="week[{{i}}].stopMinute">
+                        {% for j in range(0,60,5) %}
+                        <option value="{{j}}">{{j}}</option>
+                        {% endfor %}
+                    </select>                    
+                    </td>
+
+                    </tr>
+                {% endfor %}
+            </table><br>
+            <button ng-click="sync()">Appliquer</button>    
+    </fieldset>
+    </form>
+        
+        <p> État actuel : <span ng-bind="state"></p>
+        <button ng-click="test()">Bouton</button>
+        <p>Tu as choisis le mode : <span ng-bind="mode"></p>
+    </div>
+    
+    
+    
+    
+</body>
+{% endblock %}

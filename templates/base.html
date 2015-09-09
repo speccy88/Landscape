@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="AngularWinJSApp" ng-controller="AngularWinJSAppController">
+<head>
+    <title>WinJS project</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='lib/Microsoft.WinJS.4.0/css/ui-dark.css') }}">
+    
+    <script src="{{ url_for('static', filename='lib/Microsoft.WinJS.4.0/js/WinJS.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/angular-winjs.js') }}"></script>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/default.css') }}">
+    <script src="{{ url_for('static', filename='js/default.js') }}"></script>
+</head>
+{% block body %}{% endblock %}
+</html>
